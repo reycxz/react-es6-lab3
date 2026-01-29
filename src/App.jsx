@@ -4,6 +4,7 @@ import UserAPI from './UserAPI';
 
 function App() {
   const isLoggedIn = true; // simulate login
+  {isLoggedIn ? <p>Welcome back!</p> : <p>Please log in</p>}
   const users = ['Alice', 'Bob', 'Charlie'];
 
   return (
