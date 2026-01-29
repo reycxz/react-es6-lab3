@@ -1,23 +1,28 @@
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
-import UserList from './UserList.jsx';
 import Counter from './Counter.jsx';
+import UserList from './UserList.jsx';
+import UserAPI from './UserAPI';
 
 function App() {
+  const isLoggedIn = true; // simulate login
   const users = ['Alice', 'Bob', 'Charlie'];
 
   return (
-    <>
+    <div>
       <h1>Vite + React</h1>
 
-      <h2>Counter</h2>
+      {/* Conditional Rendering */}
+      {isLoggedIn ? (
+        <p>Welcome back!</p>
+      ) : (
+        <p>Please log in</p>
+      )}
+
       <Counter />
 
-      <h2>Users</h2>
       <UserList users={users} />
-    </>
+
+      <UserAPI />
+    </div>
   );
 }
 
